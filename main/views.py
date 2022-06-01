@@ -9,9 +9,7 @@ from main.serializer import *
 
 
 class InfoView(APIView):
-
     def get(self, request):
-
         info = Info.objects.last()
         ser = InfoSerializer(info)
 
@@ -26,16 +24,16 @@ class SliderView(APIView):
 
         return Response(ser.data)
 
-class ProjectsView(APIView):
 
+class ProjectsView(APIView):
     def get(self, request):
         projects = Projects.objects.all()
         ser = ProjectsSerializer(projects, many=True)
 
         return Response(ser.data)
 
-class TechnoparkView(APIView):
 
+class TechnoparkView(APIView):
     def get(self, request):
         technopark = Technopark.objects.all()[0:6]
         ser = TechnoparkSerializer(technopark, many=True)
@@ -58,8 +56,8 @@ class Postalservicesview(APIView):
 
         return Response(ser.data)
 
-class BoglanishView(APIView):
 
+class BoglanishView(APIView):
     def post(self, request):
         fullname = request.data['fullname']
         phone = request.data['phone']
@@ -67,6 +65,7 @@ class BoglanishView(APIView):
         Boglanish.objects.create(fullname=fullname,phone=phone,text=text)
 
         return Response('отправлено ваша смс')
+
 
 class MobileoperatorsView(APIView):
 
@@ -76,6 +75,7 @@ class MobileoperatorsView(APIView):
 
         return Response(ser.data)
 
+
 class InternetprovidersView(APIView):
 
     def get(self, request):
@@ -83,6 +83,7 @@ class InternetprovidersView(APIView):
         ser = InternetprovidersSerializer(providers, many=True)
 
         return Response(ser.data)
+
 
 class OurAudienceView(APIView):
 
@@ -116,8 +117,8 @@ class TeamView(APIView):
 
         return Response(ser.data)
 
-class CoworkingView(APIView):
 
+class CoworkingView(APIView):
     def get(self, request):
         coworking = Coworking.objects.all().order_by('-id')[0:2]
         ser = CoworkingSerializer(coworking, many=True)
@@ -125,7 +126,6 @@ class CoworkingView(APIView):
         return Response(ser.data)
 
 class InfrastructureSliderView(APIView):
-
     def get(self, request):
         infrastructure = InfrastructureSlider.objects.all().order_by('-id')[0:6]
         ser = InfrastructureSliderSerializer(infrastructure, many=True)

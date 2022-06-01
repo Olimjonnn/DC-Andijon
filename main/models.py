@@ -12,7 +12,7 @@ class Info(models.Model):
     lng = models.FloatField()
 
     def __str__(self):
-        return self.short_phone
+        return str(self.short_phone)
 
 
 class Slider(models.Model):
