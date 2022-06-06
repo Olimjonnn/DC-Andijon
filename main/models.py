@@ -1,3 +1,4 @@
+from email.mime import image
 from django.db import models
 
 class Info(models.Model):
@@ -99,6 +100,8 @@ class Team(models.Model):
 class Coimages(models.Model):
     image = models.ImageField(upload_to="Coworking images/")
 
+    def __str__(self):
+        return str(self.image)
 
 class Coworking(models.Model):
     text = models.TextField()
