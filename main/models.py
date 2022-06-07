@@ -1,4 +1,3 @@
-from email.mime import image
 from django.db import models
 
 class Info(models.Model):
@@ -88,6 +87,9 @@ class Residents(models.Model):
     name = models.CharField(max_length=255)
     name_ru = models.CharField(max_length=255)
     name_en = models.CharField(max_length=255)
+    text = models.CharField(max_length=255)
+    text_ru = models.CharField(max_length=255)
+    text_en = models.CharField(max_length=255)
 
 
 class Team(models.Model):
@@ -137,12 +139,18 @@ class ItAcademy(models.Model):
     start = models.DateField()
     image = models.ImageField(upload_to="It Academy/")
 
+    def __str__(self):
+        return self.name
+
 
 class StartupDirections(models.Model):
     name = models.CharField(max_length=255)
     name_ru = models.CharField(max_length=255)
     name_en = models.CharField(max_length=255)
     icon = models.ImageField(upload_to="StartupDirections/")
+
+    def __str__(self):
+        return self.name
 
 
 class IncubationCenters(models.Model):
@@ -161,6 +169,9 @@ class Raqamlashtirishxizmalari(models.Model):
     text_ru = models.CharField(max_length=255)
     text_en = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.name
+
 
 class Contact(models.Model):
     fullname = models.CharField(max_length=255)
@@ -175,12 +186,18 @@ class XizmatTuri(models.Model):
     name_en = models.CharField(max_length=255)
     price = models.IntegerField()
 
+    def __str__(self):
+        return self.name
+
 
 class Xizmatlar(models.Model):
     xizmat = models.ForeignKey(XizmatTuri, on_delete=models.PROTECT)
     name = models.CharField(max_length=255)
     name_ru = models.CharField(max_length=255)
     name_en = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
 
 
 class Application(models.Model):

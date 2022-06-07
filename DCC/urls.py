@@ -8,6 +8,8 @@ from main.views import *
 # Bu url saytni sliderini get qlb beradi
 
 urlpatterns = [
+
+    ###
     path('admin/', admin.site.urls),
     path('api/info/', InfoView.as_view()),
     path('api/slider/', SliderView.as_view()),
@@ -33,5 +35,15 @@ urlpatterns = [
     path('api/xizmatturi/', XizmatTuriView.as_view()),
     path('api/xizmatlar/', XizmatlarPost.as_view()),
     path('api/application/', ApplicationPost.as_view()),
+    ####
+        #Templates
+    path('', Home, name='home'),
+    path('table/', Table, name='table'),
+    path('info/', InfoTemplate, name='info'),
+    path('edit/<int:pk>/', EditTemplate, name='edit'),
+    path('deleteinfo/<int:pk>/', DeleteInfo, name='deleteinfo'),
+    path('infoform/', InfoFormView, name='infoform'),
+    path('slider/', SliderTemp, name='slider'),
+    ####
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

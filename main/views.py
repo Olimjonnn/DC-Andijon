@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, APIView
 from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework import status
 from django.http import Http404
+from main.form import InfoForm
 from main.models import *
 from main.serializer import *
 
@@ -215,3 +216,61 @@ class ApplicationPost(APIView):
             applicication.save()
             return Response(applicication.data, status=status.HTTP_201_CREATED)
         return Response(applicication.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+def Home(request):
+    return render(request, 'home.html')
+
+def Table(request):
+    return render(request, 'table.html')
+
+def InfoTemplate(request):
+    info = Info.objects.all()
+    context = {
+    'info':info,
+    }
+    return render(request, 'info.html', context)
+
+def InfoFormView(request):
+    info = Info.objects.all()
+    context = {
+        "infoform": InfoForm
+    }
+    if request.method == "POST":
+        form = InfoForm(request.POST)
+        if form.is_valid():
+            form.save()
+    
+    return render(request, 'infocreate.html', context)
+
+
+def EditTemplate(request, pk):
+    info = Info.objects.get(id=pk)
+    context = {
+        "info": info
+    }
+    if request.method == "POST":
+        logo = request.FILES['logo']
+        short_phone = request.POST.get('short_phone')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        address = request.POST.get('address')
+        address_ru = request.POST.get('address_ru')
+        address_en = request.POST.get('address_en')
+        lat = request.POST.get('lat')
+        lng = request.POST.get('lng')
+        
+    return render(request, 'edit.html')
+
+def DeleteInfo(request, pk):
+    info = Info.objects.get(id=pk)
+    info.delete()
+    return redirect('info')
+
+
+def SliderTemp(request):
+    slider = Slider.objects.all()
+    context = {
+        'slider':slider,
+    }
+    return render(request, 'slider.html', context)
