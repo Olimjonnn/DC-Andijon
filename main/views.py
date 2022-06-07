@@ -274,3 +274,28 @@ def SliderTemp(request):
         'slider':slider,
     }
     return render(request, 'slider.html', context)
+
+
+def ProjectsTemp(reqeust):
+    projects = Projects.objects.all()
+    context = {
+        "projects":projects
+    }
+    return render(reqeust, "projects.html", context)
+
+
+def TechnoparkTemp(reqeust):
+    technopark = Technopark.objects.all()
+    context = {
+        "technopark":technopark
+    }
+    return render(reqeust, "technopark.html", context)
+
+
+def SectionTemp(reqeust):
+    section = Section.objects.all()
+    context = {
+        "section":section
+    }
+    return render(reqeust, "section.html", context)
+

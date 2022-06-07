@@ -44,6 +44,9 @@ urlpatterns = [
     path('deleteinfo/<int:pk>/', DeleteInfo, name='deleteinfo'),
     path('infoform/', InfoFormView, name='infoform'),
     path('slider/', SliderTemp, name='slider'),
+    path('projects/', ProjectsTemp, name='projects'),
+    path('technopark/', TechnoparkTemp, name='technopark'),
+    path('section/', SectionTemp, name='section'),
     ####
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

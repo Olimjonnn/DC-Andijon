@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+            <!-- Start Breadcrumbbar -->                    
+            <div class="breadcrumbbar">
+                <div class="row align-items-center">
+                    <div class="col-md-8"></div>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="widgetbar">
+                            <a href="{% url 'infoform' %}" class="btn btn-primary-rgba"><i class="feather icon-plus mr-2"></i>Add</a>
+                        </div>                        
+                    </div>
+                </div>          
+            </div>
+            <!-- End Breadcrumbbar -->
+            <!-- Start Contentbar -->    
+            <div class="contentbar">                
+                <!-- Start row -->
+                <div class="row">
+                    <!-- Start col -->
+                    <div class="col-lg-12">
+                        <div class="card m-b-30">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-dark table-bordered">
+                                        <thead>
+                                          <tr>
+                                            <th>Id</th>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Name Russian</th>
+                                            <th>Name English</th>   
+                                            <th>Title</th>
+                                            <th>Title Russian</th>
+                                            <th>Title English</th>   
+                                            <th>Number</th>   
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for i in section %}
+                                            <tr>
+                                              <td>{{i.id}}</td>
+                                              <td><img src="{{i.image.url}}"></td>
+                                              <td>{{i.name}}</td>
+                                              <td>{{i.name_ru}}</td>
+                                              <td>{{i.name_en}}</td>
+                                              <td>{{i.text}}</td>
+                                              <td>{{i.text_ru}}</td>
+                                              <td>{{i.text_en}}</td>
+                                              <td>{{i.number}}</td>
+                                              <td><a href="{% url 'edit' i.id %}"><button type="button" class="tabledit-edit-button" style="color: white;"><span class="ti-pencil"></span></button></a>
+                                                  <a href="{% url 'deleteinfo' i.id %}"><button type="button" class="tabledit-delete-button" style="color: white"><span class="ti-trash"></span></button></a> </td>
+                                          </tr>
+                                          {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End col -->
+                </div>
+                <!-- End row -->
+            </div>
+            <!-- End Contentbar -->
+            {% endblock %}
