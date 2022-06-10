@@ -34298,6 +34298,10 @@ table.focus-on tfoot tr.focused td {
 .tourbar .card-body {
   padding: 20px;
 }
+.card-body{
+
+}
+
 
 .cd-single-step .cd-more-info {
   font-family: "Muli", sans-serif !important;
@@ -34847,6 +34851,92 @@ table.focus-on tfoot tr.focused td {
   .infobar-settings-sidebar.sidebarshow {
     width: 100%;
   }
+}
+
+/* New Styles from dosya */
+
+.wrapper {
+  padding: 100px;
+}
+
+
+.my_unique_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.first_input_unique {
+  padding: 0 !important;
+  margin-bottom: 10px;
+}
+
+.input_unique {
+  width: 270px;
+  margin-bottom: 10px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #909090;
+  padding: 5px;
+  outline: none;
+}
+
+.my_uniquebtn {
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid rgb(105, 105, 105);
+  padding: 1px 20px;
+}
+
+.my_btns {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.my_uniquebtn:hover {
+  background-color: #ddd;
+}
+
+.my_uniquebtndelete {
+  margin-top: 100px;
+  margin-left: 150px;
+  color: red;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid rgb(105, 105, 105);
+}
+
+.my_uniquebtndelete:hover {
+  background-color: #ddd;
+}
+
+.my_unique_table {
+  background-color: #D4D8DE;
+}
+
+
+.my_unique_select {
+  width: 300px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  height: 500px;
+  overflow-y: scroll;
+}
+.my_unique_select::-webkit-scrollbar {
+  width: 12px;
+  color: red;
+}
+
+.my_unique_select::-webkit-scrollbar-track {
+   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+   border-radius: 10px;
+}
+
+.my_unique_select::-webkit-scrollbar-thumb {
+   border-radius: 10px;
+   background: red; 
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -13,30 +13,31 @@ class Info(models.Model):
 
     def __str__(self):
         return str(self.short_phone)
-
-
+  
+   
 class Slider(models.Model):
     title = models.CharField(max_length=255)
     title_ru = models.CharField(max_length=255)
     title_en = models.CharField(max_length=255)
     video = models.FileField(upload_to="Videos/")
-
-
+ 
+ 
 class Projects(models.Model):
     image = models.ImageField(upload_to="Projects/")
     text = models.TextField()
     text_en = models.TextField()
     text_ru = models.TextField()
-
-
+       
+   
 class Technopark(models.Model):
     icon = models.ImageField(upload_to="Texnopark/")
     text = models.CharField(max_length=100)
     text_ru = models.CharField(max_length=100)
     text_en = models.CharField(max_length=100)
     number = models.IntegerField()
-
-
+ 
+ 
+ 
 class Section(models.Model):
     name = models.CharField(max_length=255)
     name_ru = models.CharField(max_length=255)

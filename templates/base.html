@@ -8,9 +8,9 @@
     <meta name="keywords" content="admin, admin panel, admin template, admin dashboard, responsive, bootstrap 4, ui kits, ecommerce, web app, crm, cms, html, sass support, scss">
     <meta name="author" content="Themesbox">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <title>Orbiter - Bootstrap Minimal & Clean Admin Template</title>
+    <title>Digital City | Andijon</title>
     <!-- Fevicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
     <!-- Start css -->
     <link href="{% static 'assets/plugins/switchery/switchery.min.css'%}" rel="stylesheet">
     <link href="{% static 'assets/plugins/apexcharts/apexcharts.css'%}" rel="stylesheet">
@@ -20,13 +20,15 @@
     <link href="{% static 'assets/css/icons.css'%}" rel="stylesheet" type="text/css">
     <link href="{% static 'assets/css/flag-icon.min.css'%}" rel="stylesheet" type="text/css">
     <link href="{% static 'assets/css/style.css'%}" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- End css -->
-</head>
+</head> 
 <body class="vertical-layout">    
     <!-- Start Infobar Setting Sidebar -->
     <div id="infobar-settings-sidebar" class="infobar-settings-sidebar">
         <div class="infobar-settings-sidebar-head d-flex w-100 justify-content-between">
-            <h4>Settings</h4><a href="javascript:void(0)" id="infobar-settings-close" class="infobar-settings-close"><img src="assets/images/svg-icon/close.svg" class="img-fluid menu-hamburger-close" alt="close"></a>
+            <h4>Settings</h4><a href="javascript:void(0)" id="infobar-settings-close" class="infobar-settings-close"><img src="{% static 'assets/images/svg-icon/close.svg' %}" class="img-fluid menu-hamburger-close" alt="close"></a>
         </div>
         <div class="infobar-settings-sidebar-body">
             <div class="custom-mode-setting">
@@ -75,15 +77,15 @@
         <div class="sidebar">
             <!-- Start Logobar -->
             <div class="logobar">
-                <a href="index.html" class="logo logo-large"><img src="{% static 'assets/images/logo.svg'%}" class="img-fluid" alt="logo"></a>
-                <a href="index.html" class="logo logo-small"><img src="{% static 'assets/images/small_logo.svg'%}" class="img-fluid" alt="logo"></a>
+                <a href="{% url 'home' %}" class="logo logo-large"><img src="{% static 'assets/images/logo.svg'%}" class="img-fluid" alt="logo"></a>
+                <a href="{% url 'home' %}" class="logo logo-small"><img src="{% static 'assets/images/small_logo.svg'%}" class="img-fluid" alt="logo"></a>
             </div>
             <!-- End Logobar -->
             <!-- Start Navigationbar -->
             <div class="navigationbar">
                 <ul class="vertical-menu">
                     <li>
-                        <a href="javaScript:void();">
+                        <a href="{% url 'home' %}">
                           <img src="{% static 'assets/images/svg-icon/dashboard.svg'%}" class="img-fluid" alt="dashboard"><span>Dashboard</span>
                         </a>
                     </li>
@@ -115,63 +117,58 @@
                         
                     </li>
                     <li>
-                        <a href="javaScript:void();">
+                        <a href="{% url 'postalservices' %}">
                             <img src="{% static 'assets/images/svg-icon/icons.svg'%}" class="img-fluid" alt="icons"><span>Postalservices</span>
                         </a>
                         
                     </li>
                     
                     <li>
-                        <a href="javaScript:void();">
+                        <a href="{% url 'boglanish' %}">
                             <img src="{% static 'assets/images/svg-icon/tables.svg'%}" class="img-fluid" alt="tables"><span>Boglanish</span>
                         </a>
                         
                     </li>
                     <li>
-                        <a href="javaScript:void();">
+                        <a href="{% url 'mobileoperator' %}">
                             <img src="{% static 'assets/images/svg-icon/maps.svg'%}" class="img-fluid" alt="maps"><span>Mobileoperators</span>
                         </a>
                         
                     </li>
                     <li>
-                        <a href="widgets.html">
+                        <a href="{% url 'internetproviders' %}">
                             <img src="{% static 'assets/images/svg-icon/widgets.svg'%}" class="img-fluid" alt="widgets"><span>Internetproviders</span>
                         </a>
                     </li>                        
                     <li>
-                        <a href="javaScript:void();">
+                        <a href="{% url 'ouraudience' %}">
                           <img src="{% static 'assets/images/svg-icon/pages.svg'%}" class="img-fluid" alt="pages"><span>OurAudience</span>
                         </a>
                     </li>
                     <li>
-                        <a href="javaScript:void();">
+                        <a href="{% url 'percentage' %}">
                             <img src="{% static 'assets/images/svg-icon/ecommerce.svg'%}" class="img-fluid" alt="ecommerce"><span>Percentage</span>
                         </a>
                         
                     </li>
                     <li>
-                        <a href="javaScript:void();">
+                        <a href="{% url 'residents' %}">
                             <img src="{% static 'assets/images/svg-icon/ecommerce.svg'%}" class="img-fluid" alt="ecommerce"><span>Residents</span>
                         </a>
                         
                     </li>
                     <li>
-                        <a href="javaScript:void();">
+                        <a href="{% url 'team' %}">
                             <img src="{% static 'assets/images/svg-icon/ecommerce.svg'%}" class="img-fluid" alt="ecommerce"><span>Team</span>
                         </a>
                     </li>    
                     <li>
-                        <a href="javaScript:void();">
-                            <img src="{% static 'assets/images/svg-icon/ecommerce.svg'%}" class="img-fluid" alt="ecommerce"><span>Coimages</span>
-                        </a>
-                    </li>    
-                    <li>
-                        <a href="javaScript:void();">
+                        <a href="{% url 'coworking' %}">
                             <img src="{% static 'assets/images/svg-icon/ecommerce.svg'%}" class="img-fluid" alt="ecommerce"><span>Coworking</span>
                         </a>
                     </li>  
                     <li>
-                        <a href="javaScript:void();">
+                        <a href="{% url 'infrastructureslider' %}">
                             <img src="{% static 'assets/images/svg-icon/ecommerce.svg'%}" class="img-fluid" alt="ecommerce"><span>InfrastructureSlider</span>
                         </a>
                     </li>  
@@ -335,7 +332,7 @@
     <!-- Start Footerbar -->
     <div class="footerbar">
         <footer class="footer">
-            <p class="mb-0">© 2020 Orbiter - All Rights Reserved.</p>
+            <p class="mb-0">© 2022 Orbiter - All Rights Reserved.</p>
         </footer>
     </div>
     <!-- End Footerbar -->
